@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.sujith.noteapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -67,5 +67,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
