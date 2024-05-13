@@ -1,6 +1,7 @@
 package com.sujith.noteapp.screens
 
 import android.widget.Toast
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -47,7 +48,7 @@ import com.sujith.noteapp.data.NotesDataSource
 import com.sujith.noteapp.model.Note
 import java.time.format.DateTimeFormatter
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun NoteScreen(notes: List<Note>, onAddNote: (Note) -> Unit, onRemoveNote: (Note) -> Unit) {
     var title by remember { mutableStateOf("") }
@@ -110,7 +111,7 @@ fun NoteScreen(notes: List<Note>, onAddNote: (Note) -> Unit, onRemoveNote: (Note
 //        }
         LazyColumn {
             items(notes) { note ->
-                NoteRow(note = note, onNoteClicked = {onRemoveNote(it)})
+                NoteRow(note = note,onNoteClicked = {onRemoveNote(it)})
             }
 
         }
