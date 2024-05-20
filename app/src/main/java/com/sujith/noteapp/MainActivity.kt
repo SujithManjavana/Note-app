@@ -19,6 +19,7 @@ import com.sujith.noteapp.screens.NoteScreen
 import com.sujith.noteapp.screens.NoteViewmodel
 import com.sujith.noteapp.ui.theme.NoteAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.flow
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

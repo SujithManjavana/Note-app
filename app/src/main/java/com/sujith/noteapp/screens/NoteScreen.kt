@@ -46,7 +46,10 @@ import com.sujith.noteapp.components.NoteButton
 import com.sujith.noteapp.components.NoteInputText
 import com.sujith.noteapp.data.NotesDataSource
 import com.sujith.noteapp.model.Note
+import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
@@ -136,14 +139,22 @@ fun NoteRow(note: Note, modifier: Modifier = Modifier, onNoteClicked: (Note) -> 
             horizontalAlignment = Alignment.Start) {
             Text(text = note.title, style = MaterialTheme.typography.titleMedium)
             Text(text = note.description, style = MaterialTheme.typography.bodyMedium)
-            Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
-                style = MaterialTheme.typography.bodySmall
-            )
+//            Text(
+//                text = formatDate(note.entryDate.time),
+//                style = MaterialTheme.typography.bodyMedium,
+//            )
         }
     }
 }
 
+//fun formatDate(time: Long): String {
+//    val date = Date(time)
+//    val format = SimpleDateFormat(
+//        "EEE, d MMM hh:mm aaa",
+//        Locale.getDefault(),
+//    )
+//    return format.format(date)
+//}
 @Preview(showBackground = true)
 @Composable
 fun NoteScreenPreview() {
