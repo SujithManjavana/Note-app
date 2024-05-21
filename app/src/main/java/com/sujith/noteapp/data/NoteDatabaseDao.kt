@@ -1,6 +1,7 @@
 package com.sujith.noteapp.data
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -23,8 +24,8 @@ interface NoteDatabaseDao {
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(note: Note)
 
-    @Query("DELETE FROM notes_table WHERE id = :id")
-    suspend fun delete(id: String)
+    @Delete
+    suspend fun deleteNote(note: Note)
 
     @Query("DELETE FROM notes_table")
     suspend fun deleteAll()
