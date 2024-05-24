@@ -44,7 +44,6 @@ import androidx.compose.ui.unit.dp
 import com.sujith.noteapp.R
 import com.sujith.noteapp.components.NoteButton
 import com.sujith.noteapp.components.NoteInputText
-import com.sujith.noteapp.data.NotesDataSource
 import com.sujith.noteapp.model.Note
 import com.sujith.noteapp.util.formatDate
 import java.text.SimpleDateFormat
@@ -149,8 +148,3 @@ fun NoteRow(note: Note, modifier: Modifier = Modifier, onNoteClicked: (Note) -> 
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun NoteScreenPreview() {
-    NoteScreen(notes = NotesDataSource().loadNotes(), onAddNote = {}, onRemoveNote = {})
-}

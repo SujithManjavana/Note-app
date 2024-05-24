@@ -1,9 +1,8 @@
 package com.sujith.noteapp.screens
 
-import android.util.Log
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sujith.noteapp.data.NotesDataSource
 import com.sujith.noteapp.model.Note
 import com.sujith.noteapp.repository.NoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
